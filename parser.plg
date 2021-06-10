@@ -1,0 +1,60 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: parser - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\khmt\LOCALS~1\Temp\RSPC.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/parser.pdb" /debug /machine:I386 /out:"Debug/parser.exe" /pdbtype:sept 
+".\Debug\parser.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\khmt\LOCALS~1\Temp\RSPC.tmp"
+<h3>Output Window</h3>
+Linking...
+parser.obj : error LNK2001: unresolved external symbol _getValidToken
+parser.obj : error LNK2001: unresolved external symbol _missingToken
+parser.obj : error LNK2001: unresolved external symbol _exitBlock
+parser.obj : error LNK2001: unresolved external symbol _enterBlock
+parser.obj : error LNK2001: unresolved external symbol _createProgramObject
+parser.obj : error LNK2001: unresolved external symbol _declareObject
+parser.obj : error LNK2001: unresolved external symbol _createConstantObject
+parser.obj : error LNK2001: unresolved external symbol _checkFreshIdent
+parser.obj : error LNK2001: unresolved external symbol _createTypeObject
+parser.obj : error LNK2001: unresolved external symbol _createVariableObject
+parser.obj : error LNK2001: unresolved external symbol _createFunctionObject
+parser.obj : error LNK2001: unresolved external symbol _createProcedureObject
+parser.obj : error LNK2001: unresolved external symbol _error
+parser.obj : error LNK2001: unresolved external symbol _makeCharConstant
+parser.obj : error LNK2001: unresolved external symbol _duplicateConstantValue
+parser.obj : error LNK2001: unresolved external symbol _checkDeclaredConstant
+parser.obj : error LNK2001: unresolved external symbol _makeIntConstant
+parser.obj : error LNK2001: unresolved external symbol _duplicateType
+parser.obj : error LNK2001: unresolved external symbol _checkDeclaredType
+parser.obj : error LNK2001: unresolved external symbol _makeArrayType
+parser.obj : error LNK2001: unresolved external symbol _makeCharType
+parser.obj : error LNK2001: unresolved external symbol _makeIntType
+parser.obj : error LNK2001: unresolved external symbol _createParameterObject
+parser.obj : error LNK2001: unresolved external symbol _symtab
+parser.obj : error LNK2001: unresolved external symbol _checkDeclaredLValueIdent
+parser.obj : error LNK2001: unresolved external symbol _checkDeclaredProcedure
+parser.obj : error LNK2001: unresolved external symbol _checkDeclaredVariable
+parser.obj : error LNK2001: unresolved external symbol _checkDeclaredIdent
+parser.obj : error LNK2001: unresolved external symbol _closeInputStream
+parser.obj : error LNK2001: unresolved external symbol _cleanSymTab
+parser.obj : error LNK2001: unresolved external symbol _printObject
+parser.obj : error LNK2001: unresolved external symbol _initSymTab
+parser.obj : error LNK2001: unresolved external symbol _openInputStream
+LIBCD.lib(crt0.obj) : error LNK2001: unresolved external symbol _main
+Debug/parser.exe : fatal error LNK1120: 34 unresolved externals
+Error executing link.exe.
+
+
+
+<h3>Results</h3>
+parser.exe - 35 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -318,27 +318,28 @@ void initSymTab(void) {
   //   struct Scope_ *scope;
   // };
 
-  obj = createFunctionObject("READC"); // Tạo đối tượng hàm có giá trị trả về kiểu char
+  // Tạo các global object
+  obj = createFunctionObject("READC"); // Tạo đối tượng hàm đọc vào một ký tự từ bàn phím
   obj->funcAttrs->returnType = makeCharType();
   addObject(&(symtab->globalObjectList), obj); // Thêm đối tượng hàm vào globalObjectList (đưa về objectNode)
 
-  obj = createFunctionObject("READI"); // Tạo đối tượng hàm có giá trị trả về kiểu int
+  obj = createFunctionObject("READI"); // Tạo đối tượng hàm đọc vào một số từ bàn phím
   obj->funcAttrs->returnType = makeIntType();
   addObject(&(symtab->globalObjectList), obj);
 
-  obj = createProcedureObject("WRITEI"); // Tạo đôí tượng thủ tục có giá trị tham số  kiểu int
+  obj = createProcedureObject("WRITEI"); // Tạo đôí tượng thủ tục in ra màn hình một số
   param = createParameterObject("i", PARAM_VALUE, obj); // Tạo đối tượng tham số là con của đối tượng thủ tục trên
   param->paramAttrs->type = makeIntType();
   addObject(&(obj->procAttrs->paramList),param); // Thêm đối tượng tham số vào danh sách tham số của thủ tục (đưa về objectNode)
   addObject(&(symtab->globalObjectList), obj); // Thêm đối tượng thủ tục vào globalObjectList (đưa về objectNode)
 
-  obj = createProcedureObject("WRITEC"); // Tạo đối tượng thủ tục có giá trị tham số kiểu char
+  obj = createProcedureObject("WRITEC"); // Tạo đối tượng thủ tục in ra màn hình một ký tự
   param = createParameterObject("ch", PARAM_VALUE, obj);
   param->paramAttrs->type = makeCharType();
   addObject(&(obj->procAttrs->paramList),param);
   addObject(&(symtab->globalObjectList), obj);
 
-  obj = createProcedureObject("WRITELN");
+  obj = createProcedureObject("WRITELN"); // Tạo đối tượng thủ tục thực hiện lệnh xuống dòng khi in ra màng hình.
   addObject(&(symtab->globalObjectList), obj);
 
   intType = makeIntType();

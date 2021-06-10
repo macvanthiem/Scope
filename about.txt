@@ -1,0 +1,114 @@
+symtab {
+    Object *program
+    Scope *currentScope {
+        ObjectNode *objList {
+            Object *object
+            ObjectNode *next
+        }
+        Object *owner
+        Scope *outer
+    }
+    ObjectNode *globalObjectList
+}
+
+Object {
+    char name[MAX_IDENT_LEN];
+    enum ObjectKind kind;
+    union {
+      ConstantAttributes* constAttrs;
+      VariableAttributes* varAttrs;
+      TypeAttributes* typeAttrs;
+      FunctionAttributes* funcAttrs;
+      ProcedureAttributes* procAttrs;
+      ProgramAttributes* progAttrs;
+      ParameterAttributes* paramAttrs;
+    };
+  };
+
+initSymTab()
+symtab {
+    Object* program;
+    Scope* currentScope;
+    ObjectNode *globalObjectList = 
+    1.READC {
+        name = READC
+        kind = OBJ_FUNCTION
+        funcAttrs = {
+            paramList = NULL
+            returnType = TP_CHAR
+            scope = {
+                objList = NULL
+                owner = READC
+                outer = NULL
+            }
+        }
+    }
+    2.READI {
+        name = READI
+        kind = OBJ_FUNCTION
+        funcAttrs = {
+            paramList = NULL
+            returnType = TP_INT
+            scope = {
+                objList = NULL
+                owner = READC
+                outer = NULL
+            }
+        }
+    }
+    3.WRITEI {
+        name = WRITEI
+        kind = OBJ_PROCEDURE
+        procAttrs = {
+            paramList = 
+                1.PARAM_VALUE {
+                    name = i
+                    kind = OBJ_PARAMETER
+                    paramAttrs = {
+                        kind: OBJ_PARAMETER
+                        type: TP_INT
+                        function: WRITEI
+                    }
+                }
+            scope = {
+                objList = NULL
+                owner = WRITEI
+                outer = NULL
+            }
+        }
+    }
+    4.WRITEC {
+        name = WRITEC
+        kind = OBJ_PROCEDURE
+        procAttrs = {
+            paramList = 
+                1.PARAM_VALUE {
+                    name = ch
+                    kind = OBJ_PARAMETER
+                    paramAttrs = {
+                        kind: OBJ_PARAMETER
+                        type: TP_CHAR
+                        function: WRITEC
+                    }
+                }
+            scope = {
+                objList = NULL
+                owner = WRITEC
+                outer = NULL
+            }
+        }
+    }
+    5.WRITELN { 
+        name = WRITELN
+        kind = OBJ_PROCEDURE
+        procAttrs = {
+            paramList = NULL
+            scope = {
+                objList = NULL
+                owner = WRITELN
+                outer = NULL
+            }
+        }
+    }
+}
+

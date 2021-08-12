@@ -323,11 +323,11 @@ void initSymTab(void) {
   obj->funcAttrs->returnType = makeCharType();
   addObject(&(symtab->globalObjectList), obj); // Thêm đối tượng hàm vào globalObjectList (đưa về objectNode)
 
-  obj = createFunctionObject("READI"); // Tạo đối tượng hàm đọc vào một số từ bàn phím
+  obj = createFunctionObject("READI"); // Tạo đối tượng hàm đọc vào một số nguyên từ bàn phím
   obj->funcAttrs->returnType = makeIntType();
   addObject(&(symtab->globalObjectList), obj);
 
-  obj = createProcedureObject("WRITEI"); // Tạo đôí tượng thủ tục in ra màn hình một số
+  obj = createProcedureObject("WRITEI"); // Tạo đôí tượng thủ tục in ra màn hình một số nguyên
   param = createParameterObject("i", PARAM_VALUE, obj); // Tạo đối tượng tham số là con của đối tượng thủ tục trên
   param->paramAttrs->type = makeIntType();
   addObject(&(obj->procAttrs->paramList),param); // Thêm đối tượng tham số vào danh sách tham số của thủ tục (đưa về objectNode)
@@ -339,7 +339,7 @@ void initSymTab(void) {
   addObject(&(obj->procAttrs->paramList),param);
   addObject(&(symtab->globalObjectList), obj);
 
-  obj = createProcedureObject("WRITELN"); // Tạo đối tượng thủ tục thực hiện lệnh xuống dòng khi in ra màng hình.
+  obj = createProcedureObject("WRITELN"); // Tạo đối tượng thủ tục thực hiện in dấu xuống dòng khi in ra màn hình.
   addObject(&(symtab->globalObjectList), obj);
 
   intType = makeIntType();

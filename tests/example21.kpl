@@ -1,0 +1,22 @@
+Program Example2; (* Factorial *)
+   
+Var n : Integer;
+
+Function F(a : Integer; b: Integer) : Integer;
+  var F : Integer;
+  Begin
+    F := a + b; (* F -> variable OR function*)
+  End;
+
+Function I(n : Integer) : Integer;
+  Function I(n: Integer) : Integer; (* An identifier expected *)
+    Begin
+      I:= n + 1;
+    End;
+  Begin
+    If n = 0 Then I := 1 Else I := n * I (n - 1);
+  End;
+
+Begin
+  n := F(1, 2);
+End. (* Factorial *)

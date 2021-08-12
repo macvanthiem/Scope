@@ -18,12 +18,12 @@ Program Example6;
      var v2 : t2;
          v3 : char;
      begin
-	v3 := 'a';
+	      v3 := 'a';
         v1 := f(c3,v3);
      end;
 
 Begin
-     FOR I := 1 TO N DO (* error: ERR_UNDECLARED_VARIABLE *)
+     FOR I := 1 TO c1 DO (* error: ERR_UNDECLARED_VARIABLE *)
      BEGIN
        CALL WRITEI(I);
        CALL WRITELN;

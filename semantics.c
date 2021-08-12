@@ -91,8 +91,8 @@ Object* checkDeclaredProcedure(char* name) {
 }
 
 Object* checkDeclaredLValueIdent(char* name) {
-  Object* obj = lookupObject(name); // Tìm đối tượng có định danh name
-  if (obj == NULL) // Nếu không tìm thấy thì báo lỗi định danh chưa được khai báo
+  Object* obj = lookupObject(name);
+  if (obj == NULL)
     error(ERR_UNDECLARED_IDENT,currentToken->lineNo, currentToken->colNo);
 
   switch (obj->kind) {
@@ -100,7 +100,7 @@ Object* checkDeclaredLValueIdent(char* name) {
     case OBJ_PARAMETER:
       break;
     case OBJ_FUNCTION:
-      if (obj != symtab->currentScope->owner) // ???
+      if (obj != symtab->currentScope->owner)
         error(ERR_INVALID_IDENT,currentToken->lineNo, currentToken->colNo);
       break;
     default:

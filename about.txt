@@ -112,3 +112,16 @@ symtab {
     }
 }
 
+ERR_UNDECLARED_IDENT
+    checkDeclaredIdent (kiểm tra định danh vế phải của phép gán)
+    checkDeclaredLValueIdent (kiểm tra định danh vế trái của phép gán)
+ERR_UNDECLARED_CONSTANT
+    checkDeclaredConstant (trường hợp gán const a = 10; b =a;)
+ERR_UNDECLARED_TYPE
+    checkDeclaredType (trường hợp type a = ... ; b = a; hoặc 63)
+ERR_UNDECLARED_VARIABLE
+    checkDeclaredVariable (kiểm tra biến đếm trong vòng for đã được khai báo chưa)
+ERR_UNDECLARED_PROCEDURE
+    checkDeclaredProcedure (kiểm tra thủ tục đã được khai báo chưa trong hàm CALL)
+ERR_DUPLICATE_IDENT
+    checkFreshIdent (xuất hiện chỗ khai báo)
